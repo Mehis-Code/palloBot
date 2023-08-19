@@ -19,10 +19,21 @@ try {
         console.log(`Bot login ${client.user.tag}!`);
     })
     //botin !pal komento
-    client.on('messageCreate', msg => {
-        etsi(msg)
+
+    client.on('messageCreate', async (msg) => {
+        let c = false;
+        try {
+            while (c === false) {
+                c = await etsi(msg);
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+        console.log('etsi palautti true');
     });
+
     client.login(tokenLogin);
 } catch (error) {
     console.error('An error occurred:', error.message);
-}
+} 
