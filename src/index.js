@@ -1,6 +1,6 @@
 try {
     require('dotenv').config();
-    const { Client, IntentsBitField, MessageMentions, userMention, discordSort } = require('discord.js');
+    const { Client, IntentsBitField } = require('discord.js');
     const { etsi } = require('./etsi');
     //Token .env tiedostosta
     const tokenLogin = process.env.TOKEN;
